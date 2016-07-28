@@ -1,0 +1,16 @@
+.header-wrapper{
+    width:100%;
+    background: #e7e7e7;
+    height:38px;
+}
+.header-container{
+    margin: 0 auto; 
+    width:100%;
+    color: #3276b1;
+    position: relative;
+}
+.header-container i,.header-container span{
+    float:right;
+    margin-top: 8px;
+    margin-right: 8px;
+}

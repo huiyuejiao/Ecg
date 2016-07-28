@@ -1,0 +1,61 @@
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  
+}
+h1 {
+  color: #369;
+  font-family: NeoSans;
+  font-weight: bold;
+  font-size: 220%;
+}
+h4 {
+  color: #363636;
+  font-weight: bold;
+  font-family: NeoSans;
+}
+
+h3 {
+  color: #ffffff;
+  font-weight: bold;
+  font-family: NeoSans;
+}
+body {
+  margin: 0 auto;
+  background-color: #F8F8F8;
+  position: relative;
+}
+
+p {
+  color: #363636;
+  font-weight: bold;
+  font-family: NeoSans;
+}
+
+.subtext {
+   color: #ffffff;
+   font-family: NeoSans;
+   font-weight: bold;
+   font-size: 180%;
+}
+
+.optiontext {
+  color: #363636;
+  font-weight: bold;
+  font-family: NeoSans;
+}
+
+.buttontext {
+  color: #ffffff;
+  font-weight: bold;
+  font-family: NeoSans;
+}
+@font-face {
+    font-family: NeoSans; /*a name to be used later*/
+    src: url("./app/fonts/neo-sans-light.ttf"); /*URL to font*/
+}
+
+ /*
+  * See https://github.com/angular/angular.io/blob/master/public/docs/_examples/styles.css
+  * for the full set of master styles used by the documentation samples
+  */

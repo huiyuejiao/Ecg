@@ -1,0 +1,115 @@
+<div id="main">
+  <header>
+    <ol class="breadcrumb">
+      <li> <a href="#">patient</a></li>
+      <li class="active">ECG</li>
+    </ol>
+  </header>
+  <div id="content">
+
+    <div class="content  table-responsive">
+      <div class="well-bg" style="background-color: #d9edf7;">
+        <div class="row" style="font-size: 0.8em;">
+          <div class="col-md-12">
+            <form class="search-form" method="get">
+              <div class="form-group">
+                <label>Search ECGs: </label>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="pwd">From: &nbsp;&nbsp;</label>
+                    <div class="input-group date" id="datepicker">
+                      <input type="text" class="form-control" name="from" placeholder="2015-01-01" value={{getFromDate()|date}} autocomplete="off">
+                      <span class="input-group-addon" (click)="onClickFromCalendarShow()">
+                                                    <span class="glyphicon glyphicon-calendar"></span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="pwd">To: &nbsp;&nbsp;</label>
+                    <div class="input-group date" id="datepicker1">
+                      <input type="text" class="form-control" name="to" placeholder="2016-07-07" value={{geToDate()|date}} autocomplete="off">
+                      <span class="input-group-addon" (click)="onClickToCalendarShow()">
+                                                    <span class="glyphicon glyphicon-calendar"></span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="checkbox">
+                <label>
+                <input type="checkbox" name="comment" value="true" data-toggle="collapse" data-target="#doctors" aria-expanded="false" aria-controls="doctors">Only Commented Tests
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                <input type="checkbox" name="note" value="true" data-toggle="collapse" data-target="#note" aria-expanded="false" aria-controls="note">Only Noted Tests
+                </label>
+              </div>
+
+              <div class="text-right">
+                <button type="reset" class="btn btn-danger">Reset</button>&nbsp;&nbsp;&nbsp;
+                <button id="searchClick" class="btn btn-primary">Search</button>
+              </div>
+            </form>
+            <div style="clear:both;"></div>
+            <div class="calendarFrom" *ngIf="fromCalendarShow" style="display:inline-block; min-height:290px;">
+              <datepicker [(ngModel)]="date" [minDate]="minDate" [showWeeks]="true"></datepicker>
+            </div>
+            <div style="clear:both;"></div>
+            <div class="calendarTo" *ngIf="toCalendarShow" style="display:inline-block; min-height:290px;">
+              <datepicker [(ngModel)]="dt" [minDate]="minDate" [showWeeks]="true"></datepicker>
+            </div>
+            <div style="clear:both;"></div>
+          </div>
+        </div>
+      </div>
+      <table *ngIf="!errorShow" class="table table-striped recommendation " [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
+        <thead>
+          <tr>
+            <th style="width: 8%">
+              <mfDefaultSorter by="record">Records</mfDefaultSorter>
+            </th>
+            <th style="width: 8%">
+              <mfDefaultSorter by="comment">Comments</mfDefaultSorter>
+            </th>
+            <th style="width: 8%">
+              <mfDefaultSorter by="note">Notes</mfDefaultSorter>
+            </th>
+            <th style="width: 14%">
+              <mfDefaultSorter by="length">Length</mfDefaultSorter>
+            </th>
+            <th style="width: 18%">
+              <mfDefaultSorter by="created">Created</mfDefaultSorter>
+            </th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of mf.data">
+            <td>{{item.record}}</td>
+            <td>{{item.comment}}</td>
+            <td>{{item.note}}</td>
+            <td>{{item.length}}</td>
+            <td>{{item.created}}</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="5">
+              <mfBootstrapPaginator [rowsOnPageSet]="[5,10,15]"></mfBootstrapPaginator>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+
+  </div>
+</div>

@@ -1,0 +1,95 @@
+<div id="main">
+  <header>
+    <ol class="breadcrumb">
+      <li> <a href="#">patient</a></li>
+      <li class="active">dashboard</li>
+    </ol>
+  </header>
+  <div id="content">
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-defaut">
+        <div class="panel-heading">
+          <h2 class="panel-title" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                    <a >Recent Tests</a>
+                     <p>A quick-glance at your latest tests.</p>
+          </h2>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse in">
+          <div class="panel-body">
+            <div class="timeline">
+              <div class="item" *ngFor="let item of data">
+                <div class="circle"></div>
+                <div class="message row">
+
+                  <div class="col col-span-5">{{item.created}}</div>
+                  <div class="col col-span-3">{{item.length}}</div>
+                  <div class="col col-span-2"><a>view</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="panel panel-defaut">
+        <div class="panel-heading">
+          <h2 class="panel-title" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                    <a >Recent Comments</a>
+                     <p>A quick-glance at your latest comments.</p>
+          </h2>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse">
+          <div class="panel-body">
+            <div class="comment">
+              <div class="content  table-responsive">
+
+                <table *ngIf="!errorShow" class="table table-striped recommendation " [mfData]="commentData" #mf="mfDataTable" [mfRowsOnPage]="5">
+                  <thead>
+                    <tr>
+                      <th style="width: 10%">
+                        <mfDefaultSorter by="username">From</mfDefaultSorter>
+                      </th>
+                      <th style="width: 22%">
+                        <mfDefaultSorter by="content">Content</mfDefaultSorter>
+                      </th>
+                      <th style="width: 14%">
+                        <mfDefaultSorter by="records">Associated Record</mfDefaultSorter>
+                      </th>
+                      <th style="width: 14%">
+                        <mfDefaultSorter by="notes">Associated Note</mfDefaultSorter>
+                      </th>
+                      <th style="width: 18%">
+                        <mfDefaultSorter by="created">Created</mfDefaultSorter>
+                      </th>
+
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of mf.data">
+                      <td>{{item.username}}</td>
+                      <td>{{item.content}}</td>
+                      <td>{{item.records}}</td>
+                      <td>{{item.notes}}</td>
+                      <td>{{item.created}}</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="5">
+                        <mfBootstrapPaginator [rowsOnPageSet]="[5,10,15]"></mfBootstrapPaginator>
+                      </td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <h4 class="love">Made with<i class="fa fa-heart"></i></h4>
+  </div>
+  <div class="clear"><div>
+</div>

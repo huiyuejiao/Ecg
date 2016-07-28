@@ -1,0 +1,54 @@
+
+<div id="main">
+  <header>
+    <ol class="breadcrumb">
+      <li> <a href="#">patient</a></li>
+      <li class="active">notes</li>
+    </ol>
+  </header>
+  <div id="content">
+        <div class="content  table-responsive">
+        <label>Search:<input type="search" class="form-control input-sm" placeholder="" #inputFilter  (keyup)="0" ></label>
+        <table *ngIf="!errorShow" class="table table-striped recommendation " [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
+            <thead>
+                <tr>
+                    <th style="width: 22%">
+                        <mfDefaultSorter  by="content">Content</mfDefaultSorter>
+                    </th>
+                    <th style="width: 15%">
+                        <mfDefaultSorter by="time">Occurrence Time</mfDefaultSorter>
+                    </th>
+                    <th style="width: 14%">
+                        <mfDefaultSorter by="test">Associated Test</mfDefaultSorter>
+                    </th>
+                    <th style="width: 14%">
+                        <mfDefaultSorter by="record">Associated Record</mfDefaultSorter>
+                    </th>
+                    <th style="width: 15%">
+                        <mfDefaultSorter by="created">Created</mfDefaultSorter>
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of mf.data" >
+                    <td>{{item.content}}</td>                   
+                    <td>{{item.time}}</td>
+                    <td>{{item.test}}</td>
+                    <td>{{item.record}}</td>
+                    <td>{{item.created}}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5">
+                        <mfBootstrapPaginator [rowsOnPageSet]="[5,10,15]"></mfBootstrapPaginator>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>      
+     </div>
+      
+
+  </div>
+</div>

@@ -1,0 +1,65 @@
+<my-navigation></my-navigation>
+<div class="container">
+
+  <div class="row header">
+    <h1>Cardiacare</h1>
+  </div>
+  <div class="row body">
+    <div class="contact-header">
+      <p>Contact Us</p>
+    </div>
+    <form action="#">
+      <ul>
+        <li>
+          <label for="user_name">Your Name</label>
+          <input type="text" name="user_name" placeholder="John" />
+        </li>
+        <li>
+          <label for="email">Email <span class="req">*</span></label>
+          <input type="email" name="email" placeholder="john.smith@gmail.com" />
+        </li>
+        <li>
+          <label for="tel">Tel.</label>
+          <input type="text" name="tel" placeholder="xxx-xxx-xxxx" />
+        </li>
+        <li>
+          <label for="comments">Additional Comments</label>
+          <textarea cols="" rows="5" name="comments"></textarea>
+        </li>
+      </ul>
+      
+      <div class="pull-right">
+        <div class="bold">
+          SUPPLYING QUALITY SPECIALIZED EQUIPMENT TO MEDICAL FACILITIES ACROSS CANADA.
+        </div>
+        <div class="googleMap">
+
+          <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="8" (mapClick)="mapClicked($event)">
+            <sebm-google-map-marker [markerDraggable]="true" *ngIf="lat && lng" [latitude]="lat" [longitude]="lng">
+            </sebm-google-map-marker>
+          </sebm-google-map>
+          <div class="contact_item_info">
+            <div class="contact_item_address">
+              <div>University of Victoria</div>
+              <div>Victoria,BC,Canada</div>
+            </div>
+            <div class="contact_item_coordinates">
+              <div>Tel: (250) 721-6029</div>
+              <div><a href="mailto:montreal@roxon.ca">montreal@roxon.ca</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+  <div class="continue-button">
+    <button class='button' id='call-to-action' (click)="onClickSend()">
+           <span>Send</span>
+    </button>
+    <button class='cancel-button' id='call-to-action' (click)="onClickCancel()">
+           <span>Cancel</span>
+    </button>
+  </div>
+</div>

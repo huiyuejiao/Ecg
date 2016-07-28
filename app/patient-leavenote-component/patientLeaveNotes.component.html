@@ -1,0 +1,108 @@
+<div id="main">
+  <header>
+    <ol class="breadcrumb">
+      <li> <a href="#">patient</a></li>
+      <li class="active">Leave note</li>
+    </ol>
+  </header>
+  <div id="content">
+    <div class="content  table-responsive">
+      <div class="panel-body">
+        <div class="row" style="font-size: 0.8em;">
+          <div class="col-md-12">
+            <form role="form">
+              <div class="form-group">
+                <label for="content">Leave a note for important activities such as taking drugs (*max:500 characters)</label>
+                <textarea class="form-control" name="content" style="height:200px;"></textarea>
+              </div>
+              <div class="row collapse in" id="time-calender">
+                <div class="col-md-12">
+                  <div class="form-group col-md-6">
+                    <label for="pwd">Occurrence time: &nbsp;&nbsp;</label>
+                    <div class="input-group date" id="datepicker">
+                      <input type="text" class="form-control" name="time" placeholder="2016-01-01 00:00 AM" value={{getOccurredDate()|date}} autocomplete="off">
+                      <span class="input-group-addon" (click)="onClickOccurredCalendarShow()">
+                                   <span class="glyphicon glyphicon-calendar"></span>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-6" style="float:left">
+                    <label for="pwd"> &nbsp;&nbsp;</label>
+                    <div class="input-group date">
+                      <input type="text" class="form-control" name="time" placeholder="2016-01-01 00:00 AM" value={{getTime()}} autocomplete="off">
+                      <span class="input-group-addon" (click)="onClickOccurredTimeShow()">
+                                   <span class="glyphicon glyphicon-time"></span>
+                      </span>
+                    </div>
+                  </div>
+                  <div style="clear:both"></div>
+                  <div class="form-group" style="padding-top: 6px;">
+                    <label for="pwd">Or</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <button class="associated-btn btn btn-primary" style="width: 365px;" type="button" data-toggle="collapse" data-target="#test-calender"
+                  aria-expanded="false" aria-controls="collapseExample">
+                                    Do you want to associate it with an ECG test?
+                </button>
+              </div>
+
+              <!--associate then display this part-->
+              <div class="collapse" id="test-calender">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="pwd">Test on date: &nbsp;&nbsp;</label>
+                      <div class="input-group date" id="datepicker1">
+                        <input type="text" class="form-control" name="test-date" placeholder="2016-01-01" value={{getFromDate()|date}} autocomplete="off">
+                        <span class="input-group-addon" (click)="onClickFromCalendarShow()">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group searchTestResultDiv" style="display: none">
+                  <label for="sel1">Select a Test: </label>
+                  <div class="row">
+                    <div class="col-md-8">
+                      <select class="form-control" id="test-select">
+                                                <option value="0"></option>
+                                                <option value="1">#124124 &nbsp;&nbsp; Time: 2015-08-04 15:50:30 &nbsp;&nbsp; Records: 3 &nbsp;&nbsp; Comments: 3 &nbsp;&nbsp; Notes: 3 &nbsp;&nbsp; Length: 3 mins</option>
+                                                <option value="1">#124124 &nbsp;&nbsp; Time: 2015-08-04 15:50:30 &nbsp;&nbsp; Records: 3 &nbsp;&nbsp; Comments: 3 &nbsp;&nbsp; Notes: 3 &nbsp;&nbsp; Length: 3 mins</option>
+                                                <option value="1">#124124 &nbsp;&nbsp; Time: 2015-08-04 15:50:30 &nbsp;&nbsp; Records: 3 &nbsp;&nbsp; Comments: 3 &nbsp;&nbsp; Notes: 3 &nbsp;&nbsp; Length: 3 mins</option>
+                                                <option value="1">#124124 &nbsp;&nbsp; Time: 2015-08-04 15:50:30 &nbsp;&nbsp; Records: 3 &nbsp;&nbsp; Comments: 3 &nbsp;&nbsp; Notes: 3 &nbsp;&nbsp; Length: 3 mins</option>
+                       </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group viewTestDiv" style="display: none">
+                  <label for="viewTestLink">
+                                        <a target="_blank" href="#" class="viewTestLink">View this test</a>
+                                    </label>
+                </div>
+              </div>
+              <br>
+              <div class="text-right">
+                <button type="reset" class="btn btn-danger cleanButton">Reset</button>&nbsp;&nbsp;&nbsp;
+                <a id="submitClick" class="btn btn-primary">Create</a>
+              </div>
+            </form>
+            <div class="calendarOccurred" *ngIf="calendarOccurredShow" style="display:inline-block; min-height:290px;">
+              <datepicker [(ngModel)]="dt" [minDate]="minDate" [showWeeks]="true" (change)="changedDate()"></datepicker>
+            </div>
+            <div class="calendarFrom" *ngIf="fromCalendarShow" style="display:inline-block; min-height:290px;">
+              <datepicker [(ngModel)]="date" [minDate]="minDate" [showWeeks]="true" (change)="changedDate()"></datepicker>
+            </div>
+            <div class="TimerFrom" *ngIf="TimerShow" style="display:inline-block; min-height:90px;">
+              <timepicker [(ngModel)]="mytime" (change)="changed()" [hourStep]="hstep" [minuteStep]="mstep" [showMeridian]="ismeridian"></timepicker>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>

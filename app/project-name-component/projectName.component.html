@@ -1,0 +1,50 @@
+<loginHeader ></loginHeader>
+<h1 align="center">Outdoor Lighting Selector Tool</h1>
+<div class="outer-container" [hidden]="projectnameShow">
+  <div class="table-header effect">
+    <h3 class="table-title">Name</h3>
+    <div class="actions">
+      <p class="subtext">A project name will make it easy to reference your project in future</p>
+    </div>
+  </div>
+  <div class="content">
+    <div class='login--form'>
+      <div class='exsiting-project'>
+        <label class="optiontext">Select from Existing Projects</label>
+        <p><select palceholder="" #t (change)="onSelectValue(t.value)">
+                   <option value="" disabled selected>Select Your Project</option>
+                   <option *ngFor="let project of projects" [value]="project">{{project}}</option>
+                    </select></p>
+      </div>
+      <div class="or">
+        <label></label>
+        <p>OR</p>
+      </div>
+      <div class='new-project'>
+        <label class="optiontext">Create a New Project Name</label>
+        <p><input placeholder='Please enter a project name' type='text' [(ngModel)]="newProject"></p>
+      </div>
+      <div class="continue-button">
+        <label></label>
+        <button class='button' id='call-to-action' (click)="onClickContinue(newProject)">
+                <span>Continue</span>
+                </button>
+      </div>
+      <div class="box"><br class="clear"></div>
+    </div>
+
+  </div>
+</div>
+
+<div class="outer-container" [hidden]="!projectnameShow">
+  <div class="table-header effect">
+    <h3 class="table-title">Name</h3>
+    <div class="actions">
+      <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" (click)="onClickEdit()"></i>
+    </div>
+  </div>
+  <div class="content project-name">
+    <p>Project Name</p>
+    <h4>{{newProject}}</h4>
+  </div>
+</div>

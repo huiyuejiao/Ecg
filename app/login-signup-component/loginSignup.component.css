@@ -1,0 +1,190 @@
+html, body {
+  width: 100%;
+  overflow: hidden;
+  -webkit-overflow-scrolling:no;
+}
+
+.ghost {
+  position: absolute;
+  left: -100%;
+}
+
+.signup-container,.login-container {
+  position: absolute;
+  top: 15%;
+  border:1px solid rgba(255,255,255,0.7);
+  border-radius: 6px;
+  padding:30px;
+  transition: 1s ease-in-out;
+}
+.signup-container {
+  left: 30%;
+  width: 40%;
+}
+.login-container { 
+  left: 37%;
+  width: 26%;
+}
+ul.nav{
+  width:100%;
+  margin:0 auto;  
+  margin-bottom: 15px;
+}
+ul.nav li{
+  font-size: 1.5em;
+  margin-bottom: 8px;
+  text-align: center;
+  
+}
+.nav-tabs{
+  border-bottom: 1px solid #ddd;
+}
+ul.nav li a {
+    width:80%;
+    margin:0 auto;
+    background-color: #337ab7;
+    border-color: #204d74;
+    color: #fff;
+    text-align: center;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+    padding:2px;
+}
+form{
+  margin-bottom:0px;
+}
+.form--signup .input {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  font-size: 2rem;
+  line-height: 3rem;
+  width: 45%; 
+  height: 4.2rem;
+  background-color: rgba(255,255,255,.9);
+  border: 0;
+  border-top: 1px solid rgba(255,255,255,0.7);
+  padding: 0 1rem;
+  font-family: 'Open Sans', sans-serif;
+  margin-top:5px;
+}
+ul li a {
+  padding:0px;
+}
+.form--signup .input--submit {
+    background-color: rgba(92,168,214,0.9);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    border-top: 0;
+    border-radius: 0 0 0.5rem 0.5rem;
+    margin-bottom: 1rem;
+    margin-top:0.5em;
+  }
+  
+i{
+    color:white;
+    margin-left:20px;
+  }
+.logo {
+  cursor: default;
+  position: absolute;
+  top: 8%; left: 43%;
+  width: 14%;
+
+}
+
+#loginTab li {
+    text-shadow: none;
+}
+.calendar{
+  position: absolute;
+  top: 38%; left: 50%;
+}
+
+.pull-right{
+  float: right;
+  margin-left:1em
+}
+.input {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  font-size: 2rem;
+  line-height: 3rem;
+  width: 100%; height: 4.2rem;
+  background-color: rgba(255,255,255,.9);
+  border: 0;
+  border-top: 1px solid rgba(255,255,255,0.7);
+  padding: 0 1rem;
+  font-family: 'Open Sans', sans-serif;
+  margin-top:5px;
+}
+.form--signup .input:focus {
+    background-color:#D4E4EC ;
+  }
+.input:focus {
+    background-color:#D4E4EC ;
+  }
+.input--top {
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+.input--submit {
+    background-color: rgba(92,168,214,0.9);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    border-top: 0;
+    border-radius: 0 0 0.5rem 0.5rem;
+    margin-bottom: 1rem;
+    margin-top:0.5em;
+  }
+  .text-label{
+    margin-top:10px;
+  }
+.text {
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.8);
+  text-decoration: none;
+}
+.text--small {
+    opacity: 0.85;
+    font-size: 1.75rem;
+    cursor: pointer;
+}
+ .text--small:hover {
+      opacity: 1;
+}
+.text--omega {
+    width: 200%;
+    margin: 0 0 1rem -50%;
+    font-size: 1.5rem;
+    line-height: 1.125;
+    font-weight: normal;
+}
+.text--centered {
+    display: block;
+    text-align: center;
+  }
+.text--border-right {
+    border-right: 1px solid rgba(255,255,255,0.5);
+    margin-right: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+.legal {
+  position: absolute;
+  bottom: 1.125rem; left: 1.125rem;
+}
+
+.fullscreen-bg {
+  position: fixed;
+  width:2000px;
+  z-index: -1;
+  top:0; right:0; bottom:0; left:0;
+  background: url(http://36.media.tumblr.com/3cae448eafe6cdd27c210b4da274cfe7/tumblr_ns9p18pY5a1qzwmsso1_1280.jpg) center;
+  background-size: cover;
+}
+
+#toggle--login:checked ~ .signup-container{ left:200%; visibility:hidden; }
+#toggle--signup:checked ~ .login-container { left:-100%; visibility:hidden; }
+
+@media (height:300px){.legal,.photo-cred{display:none}}

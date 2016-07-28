@@ -1,0 +1,103 @@
+<input type="radio" checked id="toggle--login" name="toggle" class="ghost" />
+<input type="radio" id="toggle--signup" name="toggle" class="ghost" />
+
+<div class="login-container">
+  <ul class="nav nav-tabs row" role="tablist" id="loginTab">
+    <li role="presentation" class="col-md-6 " (click)="patientLogin()">
+      <a href="#home" aria-controls="home" role="tab" data-toggle="tab" aria-expanded="false">Patient</a>
+    </li>
+    <li role="presentation" class="col-md-6 " (click)="patientLogin()">
+      <a href="#home" aria-controls="home" role="tab" data-toggle="tab" aria-expanded="false">Doctor</a>
+    </li>
+  </ul>
+  <form class="form form--login framed" *ngIf="patientLoginShow">
+    <h2 class="text text--centered text--omega" >Login as Patient.</h2>
+    <input type="text" placeholder="Username" class="input input--top" />
+    <input type="password" placeholder="Password" class="input" />
+    <input type="button" value="Log in" class="input input--submit" (click)="login()" />
+
+    <label for="toggle--signup" class="text-label text text--small text--centered">New? <b>Sign up</b></label>
+  </form>
+  <form class="form form--login framed" *ngIf="!patientLoginShow">
+    <h2 class="text text--centered text--omega">Login as Doctor.</h2>
+    <input type="text" placeholder="Username" class="input input--top" />
+    <input type="password" placeholder="Password" class="input" />
+    <input type="button" value="Log in" class="input input--submit" (click)="login()" />
+
+    <label for="toggle--signup" class="text-label text text--small text--centered">New? <b>Sign up</b></label>
+  </form>
+</div>
+<div class="signup-container">
+  <ul class="nav nav-tabs row" role="tablist" id="signupTab">
+    <li role="presentation" class="col-md-6 " (click)="patientSignup()">
+      <a href="#home" aria-controls="home" role="tab" data-toggle="tab" aria-expanded="false">Patient</a>
+    </li>
+    <li role="presentation" class="col-md-6 " (click)="patientSignup()">
+      <a href="#home" aria-controls="home" role="tab" data-toggle="tab" aria-expanded="false">Doctor</a>
+    </li>
+  </ul>
+  <div style=”clear:both;”></div>
+  <form class="form form--signup framed" *ngIf="patientSignupShow">
+    <h2 class="text text--centered text--omega">Join  Cardiacare as Patient.</h2>
+    <input type="text" placeholder="Firstname" class="input" />
+    <input type="text" placeholder="Lastname" class="input pull-right" />
+    <label class="radio-inline"><input type="radio"/>Male</label>
+    <label class="radio-inline"> <input type="radio"/>Female</label>
+    <div class="clear"></div>
+    <input type="text" placeholder="Birth" class="input" value={{getDate()|date}} /> <i class="fa fa-calendar fa-2x" aria-hidden="true"
+      (click)="onClickCalendarShow()"></i>
+    <div class="clear"></div>
+    <input type="text" placeholder="Medical Plan Number" class="input" />
+    <div class="clear"></div>
+    <input type="text" placeholder="Phone" class="input" />
+    <div class="clear"></div>
+    <input type="text" placeholder="Address" class="input" />
+    <div class="clear"></div>
+    <input type="email" placeholder="Email" class="input input--top" />
+    <input type="email" placeholder="Confirm Email" class="input input--top pull-right" />
+    <input type="password" placeholder="Password" class="input" />
+    <input type="password" placeholder="Confirm Password" class="input pull-right" />
+    <input type="button" value="Sign up" class="input input--submit" (click)="signup()" />
+
+    <label for="toggle--login" class="text-label text text--small text--centered">Not new? <b>Log in</b></label>
+  <div style=”clear:both;”></div>
+  </form>
+    <div style=”clear:both;”></div>
+     <form class="form form--signup framed" *ngIf="!patientSignupShow">
+    <h2 class="text text--centered text--omega">Join  Cardiacare as Doctor.</h2>
+    <input type="text" placeholder="Firstname" class="input" />
+    <input type="text" placeholder="Lastname" class="input pull-right" />
+    <label class="radio-inline"><input type="radio"/>Male</label>
+    <label class="radio-inline"> <input type="radio"/>Female</label>
+    <div class="clear"></div>
+    <input type="text" placeholder="Birth" class="input" value={{getDate()|date}} /> <i class="fa fa-calendar fa-2x" aria-hidden="true"
+      (click)="onClickCalendarShow()"></i>
+    <div class="clear"></div>
+    <input type="text" placeholder="Medical Plan Number" class="input" />
+    <div class="clear"></div>
+    <input type="text" placeholder="Phone" class="input" />
+    <div class="clear"></div>
+    <input type="text" placeholder="Address" class="input" />
+    <div class="clear"></div>
+    <input type="email" placeholder="Email" class="input input--top" />
+    <input type="email" placeholder="Confirm Email" class="input input--top pull-right" />
+    <input type="password" placeholder="Password" class="input" />
+    <input type="password" placeholder="Confirm Password" class="input pull-right" />
+    <input type="button" value="Sign up" class="input input--submit" (click)="signup()" />
+
+    <label for="toggle--login" class="text-label text text--small text--centered">Not new? <b>Log in</b></label>
+<div style=”clear:both;”></div>
+  </form>
+    <div style=”clear:both;”></div>
+  <div class="calendar" *ngIf="calendarShow" style="display:inline-block; min-height:290px;">
+    <datepicker [(ngModel)]="dt" [minDate]="minDate" [showWeeks]="true"></datepicker>
+  </div>
+  <div style=”clear:both;”></div>
+</div>
+<div class="legal">
+  <a class="text text--small text--border-right" href="javascript:;">Terms</a>
+  <a class="text text--small text--border-right" href="javascript:;">Privacy</a>
+  <a class="text text--small" href="javascript:;" (click)="onclickHelp()">Need help?</a>
+</div>
+<div style=”clear:both;”></div>
+<div class="fullscreen-bg"></div>

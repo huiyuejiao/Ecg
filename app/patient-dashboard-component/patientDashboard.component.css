@@ -1,0 +1,271 @@
+#main {
+  margin-left: 160px;
+  width:100%;
+    position: fixed;
+  top: 100px;
+    bottom:130px;
+}
+#main header {
+  position: fixed;
+  background: #fff;
+  width: 70%;
+  padding: 20px;
+  z-index: +1;
+  border-bottom: 1px solid #d9e2e7;
+}
+#main header .breadcrumb {
+  margin-bottom: 0px;
+  background: transparent;
+  font-size: 16px;
+}
+#collapseOne div.panel-body{
+  background:#E9EEF1;
+}
+#main header h1 {
+  color: #737E89;
+  font-size: 17px;
+  font-weight: 400;
+  margin: 0;
+}
+#main #accordion h2 a{
+  color: #737E89;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+#main #accordion h2 p{
+  font-size: 14px;
+  font-weight: 300;
+  margin-top: 10px;
+}
+#main #content {
+  position: fixed;
+  top: 170px;
+  padding: 20px;
+  width:70%;
+}
+#main #accordion .panel-heading{
+  background-color: #d9edf7;
+}
+#main .comment{
+  position: relative;
+}
+.content{
+  padding:10px 10px 0px 10px;
+}
+.table{
+  border: 1px solid #DADADA;
+  text-align: center;
+  font-size: 14px;
+}
+.table thead tr th{
+  text-align:center;
+}
+#main .timeline {
+  position: relative;
+  padding-left: 50px;
+}
+#main .timeline:before {
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  left: 10px;
+  content: "";
+  background: #cbd4db;
+}
+#main .timeline .item {
+  position: relative;
+}
+#main .timeline .item .circle {
+  position: absolute;
+  top: 18px;
+  left: -42px;
+  background: #acbbc7;
+  border: 1px solid #ccc;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+#main .timeline .item .message {
+  position: relative;
+  left:-20px;
+  z-index: 2;
+  margin-bottom: 15px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+#main .timeline .item .message:before {
+  position: absolute;
+  z-index: 0;
+  content: "";
+  top: 20px;
+  left: -6px;
+  box-sizing: border-box;
+  border: 5px solid transparent;
+  border-top-color: #fff;
+  border-bottom-color: transparent;
+  border-left-color: #fff;
+  border-right-color: transparent;
+  filter: drop-shadow(-1px 0 1px rgba(0, 0, 0, 0.08));
+  transform-origin: 0 0;
+  transform: rotate(-45deg);
+}
+.row {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left:0px;
+  margin-right:0px;
+}
+.col {
+  flex: 1 1 8%;
+  margin: 0 0 0.5rem 0;
+  padding: 0.5em 10px;
+  box-sizing: border-box;
+}
+.col-span-1 {
+  flex-basis: 8.3333%;
+}
+
+.col-span-2 {
+  flex-basis: 16.6666%; 
+}
+
+.col-span-3 {
+  flex-basis: 25%;
+}
+
+.col-span-4 {
+  flex-basis: 33.3333%;
+}
+
+.col-span-5 {
+  flex-basis: 41.6666%;
+}
+
+.col-span-6 {
+  flex-basis: 50%;
+}
+
+.col-span-7 {
+  flex-basis: 58.3333%;
+}
+
+.col-span-8 {
+  flex-basis: 66.6666%;
+}
+
+.col-span-9 {
+  flex-basis: 75%;
+}
+
+.col-span-10 {
+  flex-basis: 83.3333%;
+}
+
+.col-span-11 {
+  flex-basis: 91.6666%;
+}
+
+.col-span-12 {
+  flex-basis: 100%;
+}
+@media (max-width: 767px) {
+  .user-banner {
+    width: 66px;
+    padding: 1px 0px 1px 0px;
+    background: #2DCC70;
+    text-align: center;
+  }
+  .user-banner img {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 5px;
+    width: 50px;
+    margin-right: 5px;
+    border-radius: 100%;
+  }
+  .user-banner .username {
+    font-size: 75%;
+    font-weight: bold;
+  }
+
+  #nav {
+    z-index: +10;
+    width: 66px;
+  }
+  #nav li.head,
+  #nav li span {
+    display: none;
+  }
+
+  #main {
+    margin-left: 66px;
+  }
+
+  .post .avatar {
+    width: 50px;
+  }
+}
+@media (max-width: 320px) {
+      #main {
+    padding: 50px 0 0 0;
+    margin: 0;
+  }}
+  .box {
+  position: relative;
+  background: #fff;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+}
+.box h4 {
+  margin: 0 0 10px 0;
+}
+.box .header {
+  padding: 20px 20px 0;
+}
+.box .body {
+  padding: 20px 20px 8px;
+}
+.box .footer {
+  padding: 10px 20px;
+  border-top: 1px solid #E9EEF1;
+}
+
+.post .avatar {
+  float: left;
+  width: 60px;
+}
+.post .message {
+  margin-left: 80px;
+}
+.post .box {
+  border: 1px solid #CAD5E0;
+}
+.post .box::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 21px;
+  left: -6px;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-left: 1px solid #CAD5E0;
+  border-top: 1px solid #CAD5E0;
+  transform: rotate(-45deg);
+}
+
+.love {
+  text-align: center;
+  color: #80878e;
+  padding: 20px 0;
+}
+.love .fa-heart {
+  margin: 0 6px;
+  font-size: 16px;
+}

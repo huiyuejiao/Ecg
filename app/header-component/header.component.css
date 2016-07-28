@@ -1,0 +1,18 @@
+.navbar-header {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    overflow: hidden;
+    background-color: white;
+}
+.navbar-header {
+    margin:0px auto;
+}
+
+.navbar-brand{
+    padding:0px;
+    margin:5px auto;
+    width:20%;
+    margin-left:45%;
+    
+}

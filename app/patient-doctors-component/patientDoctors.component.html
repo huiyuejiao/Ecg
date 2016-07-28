@@ -1,0 +1,64 @@
+
+<div id="main">
+  <header>
+    <ol class="breadcrumb">
+      <li> <a href="#">patient</a></li>
+      <li class="active">doctors</li>
+    </ol>
+  </header>
+  <div id="content">
+        <div class="content  table-responsive">
+        <label>Search:<input type="search" class="form-control input-sm" placeholder="" #inputFilter  (keyup)="0" ></label>
+        <table *ngIf="!errorShow" class="table table-striped recommendation " [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
+            <thead>
+                <tr>
+                    <th style="width: 12%">
+                        <mfDefaultSorter  by="username">Username</mfDefaultSorter>
+                    </th>
+                    <th style="width: 14%">
+                        <mfDefaultSorter by="name">Name</mfDefaultSorter>
+                    </th>
+                    <th style="width: 14%">
+                        <mfDefaultSorter by="hospital">Hospital</mfDefaultSorter>
+                    </th>
+                    <th style="width: 14%">
+                        <mfDefaultSorter by="tel">Tel</mfDefaultSorter>
+                    </th>
+                    <th style="width: 8%">
+                        <mfDefaultSorter by="patients">Patients</mfDefaultSorter>
+                    </th>
+                    <th style="width: 14%">
+                        <mfDefaultSorter by="connectedDate">Connected Date</mfDefaultSorter>
+                    </th>
+                    <th style="width: 24%">
+                        <mfDefaultSorter></mfDefaultSorter>
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of mf.data | search:inputFilter.value" >
+                    <td>{{item.username}}</td>                   
+                    <td>{{item.name}}</td>
+                    <td>{{item.hospital}}</td>
+                    <td>{{item.tel}}</td>
+                    <td>{{item.patients}}</td>
+                    <td>{{item.connectedDate}}</td>
+                    <td>
+                      <button class="accept-button btn btn-info">Accept</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                      <button class="decline-button btn btn-danger">Decline</button></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="7">
+                        <mfBootstrapPaginator [rowsOnPageSet]="[5,10,15]"></mfBootstrapPaginator>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>      
+     </div>
+      
+
+  </div>
+</div>

@@ -1,0 +1,104 @@
+section, summary {
+    display: block;
+    height:800px;
+    width:100%;
+}
+.cardiocare-mobile{
+    height:70%;
+}
+.what-is-cardiocare .hero {
+    padding-top: 50px;
+    background-image: url(../app/images/background-section-1.jpg);
+    height: 100%;
+}
+.cardiocare-mobile .hero {
+    height: 620px;
+    background-image: url(../app/images/background-section-3-back.jpg);
+}
+.physician-testimonial .hero {
+    background-image: url(../app/images/background-section-doctor.jpg);
+    height: 780px;
+}
+.hero {
+    background-color: #fff;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.hero .hero-inner {
+    max-width: 68em;
+    margin-left: auto;
+    margin-right: auto;
+}
+.hero .hero-inner .hero-text {
+    max-width: 53.125em;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cardiocare-mobile .hero .hero-text {
+    text-shadow: 1px 1px 3px #333;
+    padding: 40px 0 0 0;
+}
+.cardiocare-mobile .hero .hero-text h2 {
+    font-size: 2.375em;
+    text-align: center;
+    color: #fff;
+    line-height: 1.23m;
+}
+.physician-testimonial .hero .hero-text {
+    margin-left: 51.17883%;
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%;
+    color: #333;
+    padding: 30px 0;
+    max-width: 53.125em;
+    text-align: left;
+}
+.physician-testimonial .hero .hero-text h1{
+    font-size: 2.375em;
+    text-align: left;
+    font-weight: 100;
+    padding:0px;
+    line-height: 1.2;
+}
+.hero .hero-inner .hero-text p {
+    line-height: 1.4em;
+    margin: 0 auto 1.875em auto;
+}
+.hero-text h1 {
+    font-size: 1.675em;
+    padding: 0 10px;
+    margin-bottom: .5em;
+    text-align: center;
+    font-weight:100;
+    font-family: Omnes,Arial,"Helvetica Neue",Helvetica,sans-serif;
+    line-height: 1.2;
+    margin: 0 0 .75em;
+    color: #333;
+    
+}
+.cardiocare .hero-text a {
+    color: #0072bc;
+    text-decoration: underline;
+    transition: color 150ms ease;
+}
+.learn-more {
+    background-color: #0072bc;
+    border: 2px solid #0072bc;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Open Sans",Helvetica,sans-serif;
+    font-size: 1em;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 600;
+    line-height: 1;
+    padding: 12px;
+    text-decoration: none;
+    transition: all 150ms ease;
+    white-space: nowrap;
+    text-align: center;
+}

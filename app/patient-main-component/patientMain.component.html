@@ -1,0 +1,40 @@
+<my-navigation></my-navigation>
+<div class="container">
+  <div id="nav">
+    <div class="user-banner"><img src="http://bit.ly/1jFjKGa" />
+      <ul class="nav" style="margin: 6px 0;">
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                  <h5 class="username">Matthew Reichardt</h5> <i class="fa fa-caret-down"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-user">
+            <li><a routerLink="./profile"  routerLinkActive="active"><i class="fa fa-user fa-fw"></i> User Profile</a>
+            </li>
+            <li class="divider"></li>
+            <li><a routerLink="../login"   routerLinkActive="active"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+            </li>
+          </ul>
+          <!-- /.dropdown-user -->
+        </li>
+        <!-- /.dropdown -->
+      </ul>
+
+    </div>
+
+    <ul class="general_ul">
+      <li><a routerLink="./dashboard" routerLinkActive="active"><i class="fa fa-fw fa-dashboard"></i><span>Dashboard</span></a></li>
+      <li><a routerLink="./ecg" routerLinkActive="active"><i class="fa fa-fw fa-bar-chart-o"></i><span class="swatch light-grey">My ECG</span></a></li>
+      <li><a routerLink="./doctors" routerLinkActive="active"><i class="fa fa-fw fa-user"></i><span>My Doctor</span></a></li>
+      <li><a routerLink="./comments" routerLinkActive="active"><i class="fa fa-fw fa-comments"></i><span>Comments</span></a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown"  routerLinkActive="active"><i class="fa fa-fw fa-leanpub"></i><span>Notes</span></a>
+        <ul class="dropdown-menu">
+          <li><a routerLink="./notes"  routerLinkActive="active">Notes History</a></li>
+          <li><a routerLink="./leave_note"  routerLinkActive="active">Leave a note</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <router-outlet></router-outlet>
+</div>
